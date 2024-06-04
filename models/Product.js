@@ -34,6 +34,15 @@ Product.init(
         isNumeric: true
       }
     },
+    category_id: {
+      type: DataTypes.INTERGER,
+      allowsNull: true, // If allowNull is not set to true then cant delete?
+      refrences: {
+        model: 'category',
+        key: 'id'
+      }
+
+    }
    
     // define columns
   },
