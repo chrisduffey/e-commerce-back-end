@@ -10,34 +10,34 @@ class Product extends Model {}
 Product.init(
   {
     id: {
-      type: DataTypes.INTERGER,
-      allowsNull: false,
+      type: DataTypes.INTEGER,
+      allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
     product_name:{
       type: DataTypes.STRING,
-      allowsNull: false
+      allowNull: false
     },
     price:{
       type: DataTypes.DECIMAL,
-      allowsNull: false,
+      allowNull: false,
       validate: {
         isDecimal: true
       }
     },
     stock: {
       type: DataTypes.DECIMAL,
-      allowsNull: false,
+      allowNull: false,
       defaultValue: 10,
       validate:{
         isNumeric: true
       }
     },
     category_id: {
-      type: DataTypes.INTERGER,
-      allowsNull: true, // If allowNull is not set to true then cant delete?
-      refrences: {
+      type: DataTypes.INTEGER,
+      allowNull: false, 
+      references: {
         model: 'category',
         key: 'id'
       }
